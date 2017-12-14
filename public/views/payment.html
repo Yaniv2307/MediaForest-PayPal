@@ -1,0 +1,13 @@
+<div class="container border rounded w-25 mt-5 p-3 card text-dark" style="box-shadow: 0 10px 6px -6px #292828">
+    
+    <form action="/pay" method="post">
+        <h3>Pay Now: {{$ctrl.convertCurrency()}} {{$ctrl.symbol}} </h3>
+        <input type="hidden" name="price" value="{{$ctrl.convertCurrency()}}" />
+        
+        <select class="w-25 mt-3" ng-model="$ctrl.toCurr" ng-change="$ctrl.change()" name="currency">
+            <option ng-repeat="c in $ctrl.currencies" value="{{c.type}}">{{c.type}}</option>
+        </select><br>
+        <input type="submit" value="Pay" class="btn btn-success text-white mt-4">
+    </form>
+
+</div>
